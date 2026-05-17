@@ -7,9 +7,9 @@ rm -rf /app
 mkdir -p /app
 cd /app
 unzip /tmp/catalogue.zip
-mysql -h <MYSQL-SERVER-IP> -u root -pRoboShop@1 < db/schema.sql # Create the database schema
-mysql -h <MYSQL-SERVER-IP> -u root -pRoboShop@1 < db/app-user.sql # create the application user and grant privileges
-mysql -h <MYSQL-SERVER-IP> -u root -pRoboShop@1 catalogue < db/master-data.sql # Insert the master data into the database
+mysql -h 10.0.0.4 -u root -pRoboShop@1 < db/schema.sql
+mysql -h 10.0.0.4 -u root -pRoboShop@1 < db/app-user.sql
+mysql -h 10.0.0.4 -u root -pRoboShop@1 catalogue < db/master-data.sql
 
 useradd -r -s /bin/false appuser # Create a system user for running the application
 cd /app
